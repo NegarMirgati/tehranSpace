@@ -6,6 +6,8 @@ const mongoClient = require('mongodb').MongoClient
 
 const app = express()
 
+app.set('view engine', 'ejs')
+
 const mongoUrl = 'mongodb://127.0.0.1:27017'
 
 var mongoConnection
@@ -29,13 +31,23 @@ app.use((req, res, next) => {
 })
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, "index.html"))
+    // res.sendFile(path.join(__dirname, "index.html"))
+    req.db
+    .collection('stories')
+    .find()
+    .toArray()
+    .then(results => {
+        res.render('index.ejs', {stories: results})
+    })
+    .catch(err => {
+        throw err
+    })
 })
 
 app.post('/story', (req, res) => {
     req.db
     .collection('stories')
-    .insertOne(req.body, (err, result))
+    .insertOne(req.body)
     .then(() => {
         console.log('story saved')
     })

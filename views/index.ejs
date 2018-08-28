@@ -12,5 +12,12 @@
         <textarea name="story" cols="30" rows="10"></textarea>
         <button type="submit">Send Story</button>
     </form>
+    
+
+    <ul>
+    <% for(story of stories) { %>
+        <li><%= story.story %></li>
+    <% } %>
+    </ul>
 </body>
 </html>
