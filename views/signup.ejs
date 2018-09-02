@@ -6,15 +6,18 @@
     <title>Tehran Space - signup</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
-    <div class="signin-form profile">
-        <h3>Login</h3>
+<body style="background-color:lightblue">
+    <div class="signin-form profile" align="center">
+        <h3>Sign Up</h3>
         
         <div class="signup-form">
             <form action="/auth/signup" method="post">
-                <input type="text" name="email" placeholder="E-mail" required="">
-                <input type="password" name="password" placeholder="Password" required="">
-                <input type="password" name="passwordConf" placeholder="Confirm Password" required="">
+                <input type="text" name="username" placeholder="username" required=""><br/><br/>
+                <input type="text" name="email" placeholder="E-mail" required=""><br/><br/>
+                <input type="date" name="bday"><br/><br/>
+                <input type="text" name="university" placeholder="university"><br/><br/>
+                <input type="password" name="password" placeholder="Password" required=""><br/><br/>
+                <input type="password" name="passwordConf" placeholder="Confirm Password" required=""><br/><br/>
 				<input type="submit" value="REGISTER">
             </form>
         </div>

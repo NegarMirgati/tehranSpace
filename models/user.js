@@ -10,7 +10,21 @@ var UserSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        required: true,
+        required: true
+    },
+    username: {
+        type: String,
+        required : true
+    },
+
+    university: {
+        type: String,
+        required : false
+    },
+
+    bday: {
+        type: Date,
+        required : false
     }
 });
 
